@@ -1,0 +1,173 @@
+{% extends 'core/dashboard_base.html' %}
+
+{% block dashboard_content %}
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>Alumin Profile </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Profile</a></li>
+                                    <li class="active">Detail</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="animated fadeIn">
+                <div class="row container">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">{{ object.user.username }} </strong>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-2 border-right">
+                                        <div class="profile-image rounded-circle bg-light mx-auto" style="width: 100px; height: 100px; overflow: hidden;">
+                                            <img src="{{ object.profile_image.url }}" alt="" style="width: 100%; height: auto;">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-7">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Full Name</small>
+                                                    {% if object.full_name != "" %}
+                                                    <h4 class="text-primary">{{ object.full_name }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Year of graduation</small>
+                                                    {% if object.year_of_graduation != "" %}
+                                                    <h4 class="text-primary">{{ object.year_of_graduation }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Phone Number</small>
+                                                    {% if object.phone_number != "" %}
+                                                    <h4 class="text-primary">{{ object.phone_number }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Country</small>
+                                                    {% if object.country != "" %}
+                                                    <h4 class="text-primary">{{ object.country }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Phone Number</small>
+                                                    {% if object.phone_number != "" %}
+                                                    <h4 class="text-primary">{{ object.phone_number }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">State</small>
+                                                    {% if object.state != "" %}
+                                                    <h4 class="text-primary">{{ object.state }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Date Of Birth</small>
+                                                    {% if object.day_of_birth != "" and  object.month_of_birth != "" %}
+                                                    <h4 class="text-primary">{{ object.day_of_birth }}/{{ object.month_of_birth }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Profession</small>
+                                                    {% if object.profession != "" %}
+                                                    <h4 class="text-primary">{{ object.profession }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="profile-detail-text my-2">
+                                                    <small class="text-muted">Ministry Group {{this_user_pk}} </small>
+                                                    {% if object.ministry_group != "" %}
+                                                    <h4 class="text-primary">{{ object.ministry_group }}</h4>
+                                                    {% else %}
+                                                    <h4 class="text-primary">N/A</h4>
+                                                    {% endif %}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% if user.is_authenticated and user.pk == this_user_pk %}
+                                        <div class="profile-detail-text my-2">
+                                            
+                                            <a href="{% url 'core:fill_profile' user.profile.pk %}" class="btn btn-primary border-radius">
+                                                Update
+                                            </a>
+                                            <a href="{% url 'core:bizhub:bizhub_form' %}" class="btn btn-primary border-radius">
+                                                Add your business
+                                            </a>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- .card -->
+                    </div><!--/.col-->
+            </div>
+        </div><!-- .animated -->
+    </div><!-- .content -->
+{% endblock dashboard_content %}

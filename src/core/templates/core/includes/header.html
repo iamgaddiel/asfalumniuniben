@@ -1,0 +1,31 @@
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="{% url 'core:index' %}" class="logo">
+                        <h4>ASF<span>ALUMNI</span></h4>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="{% url 'core:index' %}#top" class="active">Home</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'core:blogs' %}">Blog and News</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'core:bizhub:bizhub_list' %}">Biz Hub</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="scroll-to-section"><a href="{% url 'core:dashboard' %}">Dashboard</a></li>
+                        {% endif %}
+                        <li class="scroll-to-section">
+                            <div class="main-red-button"><a href="{% url 'core:login' %}">join the alumni network</a></div>
+                        </li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

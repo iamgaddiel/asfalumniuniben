@@ -1,0 +1,61 @@
+{% extends 'core/dashboard_base.html' %}
+
+{% block dashboard_content %}
+
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Alumins</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="{% url 'core:dashboard' %}">Dashboard</a></li>
+                            <li>Alumins</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="animated fadeIn">
+
+            <ul class="list-group list-group-flush">
+                {% for object in object_list %}
+                <li class="list-group-item bg-light w-100">
+                    <div class="d-flex align-items-center">
+                        <div class="user-image rounded-circle" style="overflow: hidden; width: 50px; height: 50px;">
+                            <img src="{{ object.profile_image.url }}" alt="profile image"
+                                style="width: 100%; height: auto;">
+                        </div>
+                        <div class="user-detail ml-3">
+                            <h5 class="text-primary">
+                                {% if object.full_name != "" %}
+                                    {{ object.full_name }}
+                                {% else %}
+                                    John Doe
+                                {% endif %}
+                            </h5>
+                            <small class="mt-2">
+                                <a href="{% url 'core:profile_detail' object.pk %}" class="nav-link p-0">
+                                    <i class="fa fa-eye-open"></i>
+                                    View
+                                </a>
+                            </small>
+                        </div>
+                    </div>
+                </li> <!-- end list -->
+                {% endfor %}
+            </ul>
+    </div><!-- .animated -->
+</div><!-- .content -->
+{% endblock dashboard_content %}

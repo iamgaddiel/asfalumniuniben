@@ -1,0 +1,303 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                            <h6>WELCOME TO THE GLORIOUS FAMILY</h6>
+                            <h2><em>We are Upholding the</em> <span>Ancient Landmark</span></h2>
+                            <p>Proverbs 22:28 Remove not the ancient landmark, which thy fathers have set</p>
+
+                            <div class="main-red-button"><a href="{% url 'core:login' %}">join the alumni network</a></div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <img src="{% static '/images/bannerr.png' %}" alt="team meeting">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="about-us section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 align-self-center">
+                <div class="services">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <div class="icon">
+                                    <img src="{% static '/images/service-icon-01.png' %}" alt="reporting">
+                                </div>
+                                <div class="right-text">
+                                    <h4>Hebrews 13:1</h4>
+                                    <p>The Alumni body of ASF UNIBEN - UBTH is a network of professionals around the
+                                        globe
+                                        committed to furthering the gospel of Jesus Christ, and fostering a sense of
+                                        brotherhood and
+                                        camaraderie through our activities, platforms and events.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="services" class="our-services section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="left-image">
+                    <img src="{% static '/images/services-left-imagee.jpg' %}" alt=""
+                        class="shadow-lg p-3 mb-5 bg-white rounded">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="section-heading">
+                    <h2>Our Membership<span> Community</span></h2>
+                    <p>Membership to the Alumni body is open to all graduates of the University of Benin who were
+                        members
+                        of Anglican Students Fellowship. We look forward to welcoming fresh graduates, as well as older
+                        alumni
+                        members whom we may have lost touch with. </p>
+                    <p>We have a vibrant and productive representation both in Nigeria, the African Continent as well as
+                        other nations
+                        across the world. No matter your location, there's definitely an ASF UNIBEN Alumni community
+                        near you!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="blog" class="our-blog section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+                <div class="section-heading">
+                    <h2>Read <em>Spiritually Rich</em> Articles And Get <span>Relevant</span> Updates </h2>
+                </div>
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                <div class="left-image">
+                    <a href="blogs.html"><img src="{% static '/images/big-blog-thumb.jpg' %}" alt="Workspace Desktop"></a>
+                    <div class="info">
+                        <div class="inner-content">
+                            <ul>
+                                <li><i class="fa fa-calendar"></i> 24 Mar 2021</li>
+
+                            </ul>
+                            <a href="blogs.html">
+                                <h4>WE ARE IRREVERSIBLY BLESSED</h4>
+                            </a>
+                            <p>For the gifts and calling of God are without repentance. And we know that God works all
+                                things together for the good of
+                                those who love Him, who are called according to His purpose.</p>
+                            <div class="main-blue-button">
+                                <a href="blogs.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                <div class="right-list">
+                    <ul>
+                        <li>
+                            <div class="left-content align-self-center">
+
+                                <a href="blogs.html">
+                                    <h4>REUNION AND ELECTIONS</h4>
+                                </a>
+                                <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
+                                <p>We will be announcing plans shortly regarding the Alumni Reunion for 2021. Also,
+                                    elections will
+                                    be held to usher in a new set of leaders for the alumni body. Glory!
+                                </p>
+                            </div>
+
+                            <div class="right-image">
+                                <a href="#"><img src="{% static '/images/blog-thumb-0111.jpg' %}" alt=""></a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="left-content align-self-center">
+
+                                <a href="blogs.html">
+                                    <h4>REVIVE THY WORK OH LORD</h4>
+                                </a>
+                                <span><i class="fa fa-calendar"></i> 14 Mar 2021</span>
+                                <p>The testimonies of God should stimulate 'Reverential Fear' in us for God
+                                    is no respecter of persons (Acts 10: 34, Romans 2: 11)
+                                </p>
+                            </div>
+                            <div class="right-image">
+                                <a href="#"><img src="{% static '/images/blog-thumb-12.jpg' %}" alt=""></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left-content align-self-center">
+
+                                <a href="blogs.html">
+                                    <h4>GIANTS FALL</h4>
+                                </a>
+                                <span><i class="fa fa-calendar"></i> 06 Mar 2021</span>
+                                <p>And Caleb stilled the people before Moses and said let us go up at once
+                                    and possess it, for we are well able to overcome it. (Num. 13: 30)
+                                </p>
+                            </div>
+                            <div class="right-image">
+                                <a href="#"><img src="{% static '/images/blog-thumb-013.jpg' %}" alt=""></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="services" class="our-services section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="section-heading">
+                    <h2>How You can be<span> Active </span>as an Alumni</h2>
+                    <p>Being an Alumni is a perfect opportunity to partake in the glorious mandate of furthering the
+                        gospel of
+                        Christ on a global level. Your participation ensures that the wonderful times we spent in
+                        service during our
+                        school days can be relived and better experienced. </p>
+                    <p>On this platform, you can get acquainted with our events, programs and updates; interact with
+                        Alumni members
+                        in your region and also find out ways we can continue to be a blessing to the student
+                        fellowship.
+                    </p>
+                    <p>You can also advertise your business and professional services as well as connect with other
+                        alumni on the Biz Hub
+                        section of this website.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
+                <div class="leftt-image">
+                    <img src="{% static '/images/image-right.jpg' %}" alt="" class="shadow-lg p-3 mb-5 bg-white rounded">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="about" class="about-us section">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 align-self-center">
+                <div class="services">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <div class="icon">
+                                    <img src="{% static '/images/service-icon-01.png' %}" alt="reporting">
+                                </div>
+                                <div class="right-text">
+                                    <h4>BOUNDED BY THE LAW OF CONNECTIVITY
+                                    </h4>
+                                    <p>
+                                        (John 11:41-42)
+                                        Today if we lift up our eyes from any region of the earth,
+                                        no matter how much a disadvantaged and hopeless position we are in. Heaven will
+                                        send help.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact" class="contact-us section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <div class="section-heading">
+                    <h2>We would love to hear from you</h2>
+                    <p>Feel free to send a message, encouragement, prayer point or inquiriy about the alumni body and we
+                        would speedily respond</p>
+                    <div class="phone-info">
+                        <h4>Call Us: <span><i class="fa fa-phone"></i> <a href="#">+23480-992-81429</a></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <form id="contact" action="" method="post">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <fieldset>
+                                <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                            <fieldset>
+                                <input type="phone" name="phone" id="phone" placeholder="Phone Number" autocomplete="on"
+                                    required>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <fieldset>
+                                <textarea name="message" type="text" class="form-control" id="message"
+                                    placeholder="Message" required=""></textarea>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                            <fieldset>
+                                <button type="submit" id="form-submit" class="main-button ">Send Message</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="contact-dec">
+                        <img src="{% static '/images/contact-decoration.png' %}" alt="">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
