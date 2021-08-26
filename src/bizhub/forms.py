@@ -25,11 +25,13 @@ class BusinessCreationForm(ModelForm):
             }),
             'description': widgets.Textarea(attrs={
                 'placeholder': 'Business Description',
-                'class': 'form-control cc-exp'
+                'class': 'form-control cc-exp',
+                'style': 'max-height: 100px'
             }),
             'location': widgets.Textarea(attrs={
                 'placeholder': 'Location',
-                'class': 'form-control cc-exp'
+                'class': 'form-control cc-exp',
+                'style': 'max-height: 100px'
             }),
             'contact': widgets.TextInput(attrs={
                 'placeholder': 'contact',

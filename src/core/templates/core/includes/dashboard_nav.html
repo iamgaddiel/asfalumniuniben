@@ -13,12 +13,13 @@
                         <a href="{% url 'core:profile_detail' user.profile.pk %}"><i class="menu-icon fa fa-user"></i>Profile </a>
                     </li>
                     <li class="">
-                        <a href=""><i class="menu-icon fa fa-user"></i>Alumni Bizhub </a>
+                        <a href="{% url 'core:bizhub:bizhub_form' %}"><i class="menu-icon fa fa-handshake-o"></i> Alumni Bizhub </a>
                     </li>
                     <li class="">
                         <a href="{% url 'core:logout' %}"><i class="menu-icon fa fa-sign-out"></i>Logout </a>
                     </li>
                 </ul>
+                <input type="reset" value="">
             </div><!-- /.navbar-collapse -->
         </nav>
     </aside>

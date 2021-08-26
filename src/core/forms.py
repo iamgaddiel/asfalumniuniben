@@ -21,7 +21,19 @@ class UserCreationForm(UserCreationForm):
 class ProfileCreationForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['full_name', 'title', 'day_of_birth', 'month_of_birth',  'phone_number', 'country', 'state', 'profession', 'ministry_group']
+        fields = [
+            'full_name', 
+            'title', 
+            'profile_image', 
+            'day_of_birth', 
+            'month_of_birth',  
+            'phone_number', 
+            'country', 
+            'state', 
+            'profession', 
+            'ministry_group', 
+            'year_of_graduation'
+        ]
         widgets = {
             'full_name': widgets.TextInput(attrs={
                 'placeholder': 'Fullname',
@@ -44,7 +56,7 @@ class ProfileCreationForm(forms.ModelForm):
                 'class': 'form-control cc-exp'
             }),
             'country': widgets.TextInput(attrs={
-                'placeholder': 'Country',
+                'placeholder': 'Country of Residence',
                 'class': 'form-control cc-exp'
             }),
             'state': widgets.TextInput(attrs={
@@ -56,7 +68,12 @@ class ProfileCreationForm(forms.ModelForm):
                 'class': 'form-control cc-exp'
             }),
             'ministry_group': widgets.TextInput(attrs={
-                'placeholder': 'Minestry Group',
+                'placeholder': 'ASF Ministry Group',
+                'class': 'form-control cc-exp'
+                
+            }),
+            'year_of_graduation': widgets.TextInput(attrs={
+                'placeholder': 'Year Of Graduation',
                 'class': 'form-control cc-exp'
                 
             })

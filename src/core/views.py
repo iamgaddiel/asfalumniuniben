@@ -8,20 +8,26 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, FormView, View, TemplateView, UpdateView, CreateView
 from core.forms import ProfileCreationForm, UserCreationForm
-from core.models import Profile
+from core.models import Blog, Profile
 
 
 class Index(TemplateView):
     template_name = "core/index.html"
 
-class Blogs(TemplateView):
+class Blogs(ListView):
     template_name = "core/blogs.html"
+    model = Blog
+    
 
 class Registration(CreateView):
     template_name = "core/register.html"
-    success_url = reverse_lazy('core:login')
     form_class = UserCreationForm
     model = User
+
+    def form_valid(self, form) -> HttpResponse:
+        messages.success(self.request, "You've successfully registered, login to continue")
+        form.save()
+        return redirect('core:login')
 
 class RedirectToProfileUpdate(View):
     def get(self, request, *args, **kwargs):
@@ -42,7 +48,7 @@ class ViewProfile(LoginRequiredMixin, TemplateView):
     template_name = "core/profile.html"
     
 
-class ProfileUpdate(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class ProfileUpdate(LoginRequiredMixin, UserPassesTestMixin,  UpdateView):
     form_class = ProfileCreationForm
     template_name = "core/profile_form.html"
     success_url = reverse_lazy()
@@ -70,5 +76,7 @@ class Dashboard(LoginRequiredMixin, ListView):
     template_name = "core/dashboard.html"
     ordering = ['-id']
 
-
+    # def test_func(self) -> Optional[bool]:
+    #     if self.request.user
+    #     return super().test_func()
  

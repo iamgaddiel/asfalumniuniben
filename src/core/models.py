@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser, User
+from django.utils import timezone
 import uuid
 
 
@@ -11,6 +12,7 @@ class Profile(models.Model):
         ('Mr', 'Mr'),
         ('Mrs', 'Mrs'),
         ('Miss', 'Miss'),
+        ('Rev', 'Rev'),
     ]
     DAYS = [
         ('1', '1'),
@@ -79,4 +81,13 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.username} profile"
+
+class Blog(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    image = models.ImageField(upload_to="blog_images %Y%M%d", default="blog_image.png")
+    content = models.TextField()
+    date = models.DateField(auto_now=timezone.now)
+
+    def __str__(self) -> str:
+        return self.title
 

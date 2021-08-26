@@ -46,71 +46,26 @@
             <div class="col-lg-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
                 <div class="right-list">
                     <ul>
+                        {% for object in object_list %}
                         <li>
                             <div class="left-content align-self-center">
 
                                 <a href="#">
-                                    <h4>REUNION AND ELECTIONS</h4>
+                                    <h4>{{ object.title }}</h4>
                                 </a>
-                                <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
-                                <p>We will be announcing plans shortly regarding the Alumni Reunion for 2021. Also,
-                                    elections will
-                                    be held to usher in a new set of leaders for the alumni body. Glory!
+                                <span><i class="fa fa-calendar"></i> {{  object.data }}</span>
+                                <p>
+                                    {{ object.content }}
                                 </p>
                             </div>
 
                             <div class="right-image">
-                                <a href="#"><img src="{% static 'images/blog-thumb-0111.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{{ object.image.url }}" alt="{{ object.title }}"></a>
                             </div>
                         </li>
-                        <li>
-                            <div class="left-content align-self-center">
-
-                                <a href="#">
-                                    <h4>KEEPING THE FAITH</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
-                                <p>As an overarching guide, remember James 2 vs 10 - For whosoever shall keep the whole
-                                    law
-                                    , and yet offend in one point, he is guilty of all. The lures of
-                                    the corporate world...
-                                </p>
-                            </div>
-
-                            <div class="right-image">
-                                <a href="#"><img src="{% static 'images/blog-thumb-011.png' %}" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="left-content align-self-center">
-
-                                <a href="#">
-                                    <h4>REVIVE THY WORK OH LORD</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 14 Mar 2021</span>
-                                <p>The testimonies of God should stimulate 'Reverential Fear' in us for God
-                                    is no respecter of persons (Acts 10: 34, Romans 2: 11)
-                                </p>
-                            </div>
-                            <div class="right-image">
-                                <a href="#"><img src="{% static 'images/blog-thumb-12.jpg' %}" %} alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="left-content align-self-center">
-
-                                <a href="#">
-                                    <h4>GIANTS FALL</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 06 Mar 2021</span>
-                                <p>And Caleb stilled the people before Moses and said let us go up at once
-                                    and possess it, for we are well able to overcome it. (Num. 13: 30)
-                                </p>
-                            </div>
-                            <div class="right-image">
-                                <a href="#"><img src="{% static 'images/blog-thumb-013.jpg' %}" alt=""></a>
-                            </div>
-                        </li>
+                        {% empty %}
+                        <h3 class="h3 text-center text-muted text-uppercase border p-3">No blogs yet</h3>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

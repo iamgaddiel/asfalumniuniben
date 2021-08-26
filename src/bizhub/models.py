@@ -12,7 +12,7 @@ class Bizhub(models.Model):
         ("Engineering", "Engineering"),
         ("Ecommerce", "Ecommerce"),
         ("Design", "Design"),
-        ("ICT", "ICT"),
+        ("Ict", "Ict"),
     ]
     owner = models.ForeignKey(Profile, on_delete=models.CASCADE)
     business_name = models.CharField(max_length=300, unique=True)

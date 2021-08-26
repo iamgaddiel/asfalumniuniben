@@ -822,7 +822,10 @@ aside.left-panel {
 .right-panel {
   background: #f1f2f7;
   margin-left: 280px;
-  margin-top: 55px; }
+  margin-top: 55px;
+  height: 100vh;
+  /* overflow: hidden; */
+ }
   .right-panel .top-left {
     width: 350px;
     float: left; }
