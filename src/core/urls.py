@@ -9,13 +9,17 @@ from .views import (
     Registration,
     UpdateView,
     ProfileDetail,
-    RedirectToProfileUpdate
+    RedirectToProfileUpdate,
+    ContactUsView,
+    KnowUsView
 )
 
 app_name = "core"
 
 urlpatterns = [
     path('', Index.as_view(), name="index"),
+    path('know/us/', KnowUsView.as_view(), name="know_us"), 
+    path('contact/us/', ContactUsView.as_view(), name="contact_us"), 
     path('dispatcher/', RedirectToProfileUpdate.as_view(), name="dispatcher"), 
     path('login/', LoginView.as_view(template_name="core/login.html"), name="login"),
     path('logout/', LogoutView.as_view(), name="logout"),

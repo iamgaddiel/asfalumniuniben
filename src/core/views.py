@@ -18,7 +18,6 @@ class Blogs(ListView):
     template_name = "core/blogs.html"
     model = Blog
     
-
 class Registration(CreateView):
     template_name = "core/register.html"
     form_class = UserCreationForm
@@ -28,6 +27,12 @@ class Registration(CreateView):
         messages.success(self.request, "You've successfully registered, login to continue")
         form.save()
         return redirect('core:login')
+
+class KnowUsView(TemplateView):
+    template_name = "core/knowus.html"
+
+class ContactUsView(TemplateView):
+    template_name = "core/contactus.html"
 
 class RedirectToProfileUpdate(View):
     def get(self, request, *args, **kwargs):
