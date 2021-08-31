@@ -15,6 +15,9 @@
                         <li class="scroll-to-section"><a href="{% url 'core:blogs' %}">Blog and News</a></li>
                         <li class="scroll-to-section"><a href="{% url 'core:contact_us'%}">Contact Us</a></li>
                         <li class="scroll-to-section"><a href="{% url 'core:bizhub:bizhub_list' %}">Biz Hub</a></li>
+                        <li class="scroll-to-section"><a href="{% url 'core:login' %}" class="active">Register / Login</a></li>
+
+
                         {% if user.is_authenticated %}
                         <li class="scroll-to-section"><a href="{% url 'core:dashboard' %}">Dashboard</a></li>
                         <li class="scroll-to-section">

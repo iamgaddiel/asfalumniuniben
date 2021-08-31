@@ -7,7 +7,7 @@
                     <div class="col-sm-4">
                         <div class="page-header float-left">
                             <div class="page-title">
-                                <h1>Alumin Profile </h1>
+                                <h1>View or Update Your Profile </h1>
                             </div>
                         </div>
                     </div>
@@ -15,9 +15,8 @@
                         <div class="page-header float-right">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Profile</a></li>
-                                    <li class="active">Detail</li>
+                                    <li><a href="{% url 'core:dashboard' %}">Back to Alumni List</a></li>
+
                                 </ol>
                             </div>
                         </div>
@@ -153,10 +152,11 @@
                                         </div>
                                         {% if user.is_authenticated and user.pk == this_user_pk %}
                                         <div class="profile-detail-text my-2">
-                                            
+
                                             <a href="{% url 'core:fill_profile' user.profile.pk %}" class="btn btn-primary border-radius">
                                                 Update
                                             </a>
+                                            <br>
                                             <a href="{% url 'core:bizhub:bizhub_form' %}" class="btn btn-primary border-radius">
                                                 Add your business
                                             </a>
