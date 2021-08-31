@@ -53,8 +53,11 @@ INSTALLED_APPS = [
     
     # apps
     'core.apps.CoreConfig',
-    'bizhub.apps.BizhubConfig'
+    'bizhub.apps.BizhubConfig',
+    'blog.apps.BlogConfig',
 
+    # Third Party
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

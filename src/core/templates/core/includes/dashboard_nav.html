@@ -15,6 +15,11 @@
                     <li class="">
                         <a href="{% url 'core:bizhub:bizhub_form' %}"><i class="menu-icon fa fa-handshake-o"></i> Alumni Bizhub </a>
                     </li>
+                    {% if user.is_superuser %}
+                    <li class="">
+                        <a href="{% url 'core:blog:dashboard_blog_list' %}"><i class="menu-icon fa fa-pencil-square-o"></i> Blogs </a>
+                    </li>
+                    {% endif %}
                     <li class="">
                         <a href="{% url 'core:logout' %}"><i class="menu-icon fa fa-sign-out"></i>Logout </a>
                     </li>
