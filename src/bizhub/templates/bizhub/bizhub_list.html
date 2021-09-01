@@ -41,19 +41,19 @@
             <a href="{% url 'core:bizhub:bizhub_form' %}">Add Your Business</a>
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 corder-1">
+    <div class="col-sm-12 col-md-6 order-1">
         <form action="{% url 'core:bizhub:bizhub_search' %}" method="POST">
             {% csrf_token %}
             <label for="industry">Search by Industry</label>
             <select id="industry" name="industry">
-                <option value="law">Law</option>
-                <option value="software">Software Development</option>
-                <option value="healthcare">Health Care</option>
-                <option value="accounting">Accounting</option>
-                <option value="engineering">Engineering</option>
-                <option value="ecommerce">Ecommerce</option>
-                <option value="design">Design</option>
-                <option value="ict">ICT</option>
+                <option value="Law">Law</option>
+                <option value="Software Development">Software Development</option>
+                <option value="Health Care">Health Care</option>
+                <option value="Accounting">Accounting</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Ecommerce">Ecommerce</option>
+                <option value="Design">Design</option>
+                <option value="Ict">ICT</option>
             </select>
             <button type="submit" class="c-btn">
                 <i class="fa fa-search text-primary"></i>
@@ -65,32 +65,26 @@
 <div id="blog" class="our-blog section p-5">
     <div class="container">
         <div class="row">
-
-            <div class="col-sm-12 col-md- 6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
-                <ul>
-                    {% for object in object_list %}
-                    <li>
-                        <div class="left-content align-self-center">
-
-                            <a href="#">
-                                <h4>{{ object.business_name }}</h4>
-                            </a>
-                            <span><i class="fab fa-calendar"></i>{{ object.owner.full_name }}</span><br>
-                            <span><i class="fab fa-calendar"></i>{{ object.business_sector }}</span><br>
-                            <span><i class="fab fa-calendar"></i>{{ object.description }}</span><br>
-                            <span><i class="fab fa-calendar"></i>Online</span><br>
-                            <span><i class="fab fa-calendar"></i>{{ object.location }}</span><br>
-                            <span><i class="fab fa-calendar"></i>{{ object.contact }}</span><br>
-                            <span><i class="fab fa-calendar"></i>{{ object.website }}</span><br>
-                        </div>
-                    </li>
-                    {% empty %}
-                    <li>
-                        <h3 class="text-center">No businesses has been registered yet</h3>
-                    </li>
-                    {% endfor %}
-                </ul>
+            {% for object in object_list %}
+            <div class="col-sm-12 col-md-4 wow fadeInUp mt-4 shadow" data-wow-duration="1s" data-wow-delay="0.25s">
+                <div class="left-content align-self-center">
+                    <a href="#">
+                        <h4>{{ object.business_name }}</h4>
+                    </a>
+                    <span><i class="fa fa-calendar text-muted"></i> {{ object.owner.full_name }}</span><br>
+                    <span><i class="fa fa-calendar text-muted"></i> {{ object.business_sector }}</span><br>
+                    <span><i class="fa fa-calendar text-muted"></i> {{ object.description }}</span><br>
+                    <span><i class="fa fa-calendar text-muted"></i> Online</span><br>
+                    <span><i class="fa fa-calendar text-muted"></i> {{ object.location }}</span><br>
+                    <span><i class="fa fa-calendar text-muted"></i> {{ object.contact }}</span><br>
+                    {% if object.website %}
+                    <span><i class="fa fa-calendar text-muted"></i> {{ object.website }}</span><br>
+                    {% endif %}
+                </div>
             </div>
+            {% empty %}
+            <h3 class="text-center">No businesses has been registered yet</h3>
+            {% endfor %}
         </div>
     </div>
 </div>

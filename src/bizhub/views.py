@@ -18,12 +18,12 @@ class BussinessCreation(LoginRequiredMixin, CreateView):
     def form_valid(self, form) -> HttpResponse:
         form.instance.owner = self.request.user.profile
         form.save()
-        return resolve_url("core:bizhub:bizhub_list")
+        return redirect("core:bizhub:bizhub_list")
 
 class SearchBusiness(View):
     def post(self, request, *args, **kwargs):
         template_name = "bizhub/bizhub_list.html"
-        search_params = self.request.POST.get("industry").upper()
+        search_params = self.request.POST.get("industry").capitalize()
         context = {
             "object_list": Bizhub.objects.filter(business_sector=search_params)
         }

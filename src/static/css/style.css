@@ -1,7 +1,7 @@
 .c-btn{
     background-color: transparent;
     border: none;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .c-profile-image{
@@ -37,3 +37,6 @@
     height: 10px;
 }
 
+.shadow{
+    box-shadow: 3px 3px 10px #eee;
+}

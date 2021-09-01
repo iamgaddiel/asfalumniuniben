@@ -24,7 +24,7 @@ class ProfileCreationForm(forms.ModelForm):
         fields = [
             'full_name', 
             'title', 
-            'profile_image', 
+            # 'profile_image', 
             'day_of_birth', 
             'month_of_birth',  
             'phone_number', 
