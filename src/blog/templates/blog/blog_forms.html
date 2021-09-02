@@ -48,7 +48,7 @@
                                             <h3>Create Blog</h3>
                                         </div>
                                         <hr>
-                                        <form method="post" novalidate="novalidate" enctype="multipart/form-data">
+                                        <form method="post" enctype="multipart/form-data">
                                             {% csrf_token %}
                                             <div class="row">
                                                 {% for field in form %}
@@ -58,9 +58,7 @@
                                                         {{ field }}
                                                         {% for err in field.errors %}
                                                             <small class="text-danger font-weight-bold">
-                                                                <i>
-                                                                    {{ err }}
-                                                                </i>
+                                                                <i>{{ err }} </i>
                                                             </small>
                                                         {% endfor %}
                                                         <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>

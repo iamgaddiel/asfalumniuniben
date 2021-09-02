@@ -43,31 +43,50 @@
         </div>
         <div class="row">
 
+            {% for object in object_list %}
             <div class="col-lg-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
                 <div class="right-list">
                     <ul>
-                        {% for object in object_list %}
                         <li>
                             <div class="left-content align-self-center">
 
                                 <a href="#">
                                     <h4>{{ object.title }}</h4>
                                 </a>
-                                <span><i class="fa fa-calendar"></i> {{  object.data }}</span>
+                                <span><i class="fa fa-calendar"></i> {{  object.timestamp }}</span>
                                 <p>
                                     {{ object.content }}
                                 </p>
                             </div>
 
                             <div class="right-image">
-                                <a href="#"><img src="{{ object.image.url }}" alt="{{ object.title }}"></a>
+                                <a href="#"><img src="{{ object.thumbnail_image.url }}" alt="{{ object.title }}"></a>
                             </div>
                         </li>
-                        {% empty %}
-                        <h3 class="h3 text-center text-muted text-uppercase border p-3">No blogs yet</h3>
-                        {% endfor %}
                     </ul>
                 </div>
+            </div>
+            {% empty %}
+            <h3 class="h3 text-center text-muted text-uppercase border p-3">No blogs yet</h3>
+            {% endfor %}
+            <!-- *pagination -->
+            
+            <div class="pagination">
+                <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a href="?page=1">&laquo; first</a>
+                        <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+            
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">next</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    {% endif %}
+                </span>
             </div>
         </div>
     </div>

@@ -21,6 +21,7 @@ class BlogList(ListView):
 class DashboardListView(LoginRequiredMixin, UserPassesTestMixin, ListView):
     model = Blog
     template_name = "blog/blog_dashboard_list.html"
+    paginate_by = 20
 
     def test_func(self) -> Optional[bool]:
         if self.request.user.is_superuser:
@@ -33,6 +34,7 @@ class CreateBlogView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 
     def form_valid(self, form) -> HttpResponse:
         form.instance.user = self.request.user
+        form.thumbnail_image = self.request.FILES.get("thumbnail_image")
         form.save()
         messages.success(self.request, "Blog created updated")
         return super().form_valid(form)
@@ -48,6 +50,7 @@ class UpdateBlogView(LoginRequiredMixin, UpdateView):
     form_class = BlogForm
 
     def form_valid(self, form) -> HttpResponse:
+        form.thumbnail_image = self.request.FILES.get("thumbnail_image")
         form.save()
         messages.success(self.request, "Blog successfull updated")
         return super().form_valid(form)
@@ -56,7 +59,7 @@ class UpdateBlogView(LoginRequiredMixin, UpdateView):
         context = super().get_context_data(**kwargs)
         context["form_title"] = "View/Update Blog"
         return context
- 
+
     def test_func(self) -> Optional[bool]:
         if self.request.user.is_superuser:
             return True

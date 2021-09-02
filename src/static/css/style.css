@@ -12,6 +12,76 @@
     border-radius: 50%;
 }
 
+/* height */
+.cvh-10{height: 10vh !important;}
+.cvh-20{height: 20vh !important;}
+.cvh-30{height: 30vh !important;}
+.cvh-40{height: 40vh !important;}
+.cvh-50{height: 50vh !important;}
+.cvh-60{height: 60vh !important;}
+.cvh-70{height: 70vh !important;}
+.cvh-80{height: 80vh !important;}
+.cvh-90{height: 90vh !important;}
+.cvh-100{height: 100vh !important;}
+
+/* width */
+.cvw-10{width: 10vw !important;}
+.cvw-20{width: 20vw !important;}
+.cvw-30{width: 30vw !important;}
+.cvw-40{width: 40vw !important;}
+.cvw-50{width: 50vw !important;}
+.cvw-60{width: 60vw !important;}
+.cvw-70{width: 70vw !important;}
+.cvw-80{width: 80vw !important;}
+.cvw-90{width: 90vw !important;}
+.cvw-100{width: 100vw !important;}
+
+/* height pixels */
+.ch-px-10{width: 10px !important;}
+.ch-px-20{width: 20px !important;}
+.ch-px-30{width: 30px !important;}
+.ch-px-40{width: 40px !important;}
+.ch-px-50{width: 50px !important;}
+.ch-px-60{width: 60px !important;}
+.ch-px-70{width: 70px !important;}
+.ch-px-80{width: 80px !important;}
+.ch-px-90{width: 90px !important;}
+.ch-px-100{width: 100px !important;}
+.ch-px-110{width: 110px !important;}
+.ch-px-120{width: 120px !important;}
+.ch-px-130{width: 130px !important;}
+.ch-px-140{width: 140px !important;}
+.ch-px-150{width: 150px !important;}
+.ch-px-160{width: 160px !important;}
+.ch-px-170{width: 170px !important;}
+.ch-px-180{width: 180px !important;}
+.ch-px-190{width: 190px !important;}
+.ch-px-200{width: 200px !important;}
+
+/* width pixels */
+.cw-px-10{width: 10px !important;}
+.cw-px-20{width: 20px !important;}
+.cw-px-30{width: 30px !important;}
+.cw-px-40{width: 40px !important;}
+.cw-px-50{width: 50px !important;}
+.cw-px-60{width: 60px !important;}
+.cw-px-70{width: 70px !important;}
+.cw-px-80{width: 80px !important;}
+.cw-px-90{width: 90px !important;}
+.cw-px-100{width: 100px !important;}
+.cw-px-110{width: 110px !important;}
+.cw-px-120{width: 120px !important;}
+.cw-px-130{width: 130px !important;}
+.cw-px-140{width: 140px !important;}
+.cw-px-150{width: 150px !important;}
+.cw-px-160{width: 160px !important;}
+.cw-px-170{width: 170px !important;}
+.cw-px-180{width: 180px !important;}
+.cw-px-190{width: 190px !important;}
+.cw-px-200{width: 200px !important;}
+
+/* width  */
+
 .square-100{
     width: 100px;
     height: 100px;

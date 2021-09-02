@@ -7,12 +7,20 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, FormView, View, TemplateView, UpdateView, CreateView
+
 from core.forms import ProfileCreationForm, UserCreationForm
 from core.models import Profile
+from blog.models import Blog
 
 
 class Index(TemplateView):
     template_name = "core/index.html"
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context  = super().get_context_data(**kwargs)
+        context["blog_list"] = Blog.objects.all()[1:3]
+        context["newest_blog"] = Blog.objects.first()
+        return context
 
     
 class Registration(CreateView):

@@ -105,80 +105,55 @@
         </div>
         <br>
         <br>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+                {% if newest_blog %}
                 <div class="left-image">
-                    <a href="blogs.html"><img src="{% static '/images/big-blog-thumb.jpg' %}" alt="Workspace Desktop"></a>
+                    <!-- todo  -->
+                    <a href="">
+                        <div class="d-flex justify-content-center align-items-center" style="width: 28rem; height: 28rem;">
+                            <img src="{{ newest_blog.thumbnail_image.url }}" alt="Workspace Desktop">
+                        </div>
+                    </a>
                     <div class="info">
                         <div class="inner-content">
                             <ul>
-                                <li><i class="fa fa-calendar"></i> 24 Mar 2021</li>
+                                <li><i class="fa fa-calendar"></i> {{ newest_blog.timestamp }}</li>
 
                             </ul>
                             <a href="blogs.html">
-                                <h4>WE ARE IRREVERSIBLY BLESSED</h4>
+                                <h4>{{ newest_blog.title }}</h4>
                             </a>
-                            <p>For the gifts and calling of God are without repentance. And we know that God works all
-                                things together for the good of
-                                those who love Him, who are called according to His purpose.</p>
+                            <p>{{ newest_blog.caption }}.</p>
                             <div class="main-blue-button">
-                                <a href="blogs.html">Read More</a>
+                                <a href="">Read More</a> <!-- todo: blog detail -->
                             </div>
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
                 <div class="right-list">
                     <ul>
+                        {% for blogs in blog_list %}
                         <li>
                             <div class="left-content align-self-center">
 
-                                <a href="blogs.html">
-                                    <h4>REUNION AND ELECTIONS</h4>
+                                <a href=""> <!-- todo: add blog detail url -->
+                                    <h4>{{ blogs.title }}</h4>
                                 </a>
-                                <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
-                                <p>We will be announcing plans shortly regarding the Alumni Reunion for 2021. Also,
-                                    elections will
-                                    be held to usher in a new set of leaders for the alumni body. Glory!
-                                </p>
+                                <span><i class="fa fa-calendar"></i> {{ blogs.timestamp }}</span>
+                                <p>{{ blogs.caption }}</p>
                             </div>
 
                             <div class="right-image">
-                                <a href="#"><img src="{% static '/images/blog-thumb-0111.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{{ blogs.thumbnail_image.url }}" alt=""></a>
                             </div>
                         </li>
-
-                        <li>
-                            <div class="left-content align-self-center">
-
-                                <a href="blogs.html">
-                                    <h4>REVIVE THY WORK OH LORD</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 14 Mar 2021</span>
-                                <p>The testimonies of God should stimulate 'Reverential Fear' in us for God
-                                    is no respecter of persons (Acts 10: 34, Romans 2: 11)
-                                </p>
-                            </div>
-                            <div class="right-image">
-                                <a href="#"><img src="{% static '/images/blog-thumb-12.jpg' %}" alt=""></a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="left-content align-self-center">
-
-                                <a href="blogs.html">
-                                    <h4>GIANTS FALL</h4>
-                                </a>
-                                <span><i class="fa fa-calendar"></i> 06 Mar 2021</span>
-                                <p>And Caleb stilled the people before Moses and said let us go up at once
-                                    and possess it, for we are well able to overcome it. (Num. 13: 30)
-                                </p>
-                            </div>
-                            <div class="right-image">
-                                <a href="#"><img src="{% static '/images/blog-thumb-013.jpg' %}" alt=""></a>
-                            </div>
-                        </li>
+                        {% empty %}
+                            <li>No blogs found </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -186,7 +161,7 @@
     </div>
 </div>
 
-<div id="services" class="our-services section">
+<div id="services" class="our-services section" style="margin-top: 20rem;">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">

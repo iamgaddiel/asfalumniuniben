@@ -12,7 +12,7 @@ class Blog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=300, unique=True)
     caption = RichTextField(help_text="Enter caption text for this blog")
-    thumbnail_image = models.ImageField(default="blog.png", upload_to="blog_images%Y%M%d")
+    thumbnail_image = models.ImageField(default="blog.png", upload_to="blog_images/")
     content = RichTextField(help_text="this is the main writeup for this blog")
     timestamp = models.DateField(auto_now_add=timezone)
 
@@ -23,3 +23,6 @@ class Blog(models.Model):
     def get_absolute_url(self, *args, **kwargs):
         from django.urls import reverse
         return reverse("core:blog:dashboard_blog_list")
+
+    class Meta:
+        ordering = ["-timestamp"]
