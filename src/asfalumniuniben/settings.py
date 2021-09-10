@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
     "asfunibenalumni.pythonanywhere.com",
     "https://www.asfunibenalumni.pythonanywhere.com",
     "localhost",
+    "asfalumniuniben.com"
 ]
 
 
